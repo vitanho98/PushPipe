@@ -79,11 +79,11 @@ export default function LandingPage() {
             <FeatureCard
               icon={
                 <Image
-                  src="/logo/PushPipe.jpeg"
-                  alt="PushPipe Logo"
+                  src="/logo/pipepush.jpeg"
+                  alt="PipePush Logo"
                   width={40}
                   height={40}
-                  className="h-10 w-10"
+                  className="h-10 w-10 rounded-full"
                 />
               }
               title="Customizable Notifications"
