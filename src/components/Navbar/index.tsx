@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "../ThemeToggle";
+import { GithubAuthButton } from "../GithubAuthButton";
 
 export default function Navbar() {
   return (
@@ -43,12 +43,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <ThemeToggle />
             <div className="hidden md:flex gap-4">
-              <Button variant="outline" asChild>
-                <Link href="/login">Log In</Link>
-              </Button>
-              <Button asChild className="bg-blue-500 hover:bg-blue-700">
-                <Link href="/signup">Sign Up</Link>
-              </Button>
+              <GithubAuthButton />
             </div>
           </div>
         </div>

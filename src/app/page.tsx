@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, GitBranch, GitPullRequest, Users } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import HeroAnimation from "@/components/HeroAnimations";
 import FeatureCard from "@/components/FeatureCard";
 import NotificationDemo from "@/components/NotificationDemo";
 import Navbar from "@/components/Navbar";
+import { GithubAuthButton } from "@/components/GithubAuthButton";
 
 export default function LandingPage() {
   return (
@@ -27,18 +27,7 @@ export default function LandingPage() {
               channels.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
-              <Button
-                asChild
-                size="lg"
-                className="bg-blue-500 hover:bg-blue-700"
-              >
-                <Link href="#get-started">
-                  Get Started <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link href="#how-it-works">Learn More</Link>
-              </Button>
+              <GithubAuthButton />
             </div>
           </div>
         </section>
@@ -79,8 +68,8 @@ export default function LandingPage() {
             <FeatureCard
               icon={
                 <Image
-                  src="/logo/pipepush.jpeg"
-                  alt="PipePush Logo"
+                  src="/logo/pushpipe.jpeg"
+                  alt="PushPipe Logo"
                   width={40}
                   height={40}
                   className="h-10 w-10 rounded-full"
@@ -102,10 +91,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section
-          id="how-it-works"
-          className="w-full w-full py-8 md:py-12 lg:py-24"
-        >
+        <section id="how-it-works" className="w-full py-8 md:py-12 lg:py-24">
           <div className="mx-auto flex max-w-[58rem] flex-col items-center gap-4 text-center">
             <h2 className="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-5xl">
               How It Works
@@ -121,10 +107,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section
-          id="get-started"
-          className="w-full w-full py-8 md:py-12 lg:py-24"
-        >
+        <section id="get-started" className="w-full py-8 md:py-12 lg:py-24">
           <div className="mx-auto flex max-w-[58rem] flex-col items-center gap-4 text-center">
             <h2 className="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-5xl">
               Ready to Connect?
@@ -133,21 +116,6 @@ export default function LandingPage() {
               Sign up now and start receiving GitHub notifications in your
               Discord channels
             </p>
-
-            <div className="mt-6 flex flex-col gap-4 sm:flex-row">
-              <Button
-                asChild
-                size="lg"
-                className="bg-blue-500 hover:bg-blue-700"
-              >
-                <Link href="/signup">
-                  Sign Up Free <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link href="/login">Log In</Link>
-              </Button>
-            </div>
           </div>
         </section>
       </main>
