@@ -6,6 +6,7 @@ import FeatureCard from "@/components/FeatureCard";
 import NotificationDemo from "@/components/NotificationDemo";
 import Navbar from "@/components/Navbar";
 import { GithubAuthButton } from "@/components/GithubAuthButton";
+import { FaGithub } from "react-icons/fa6";
 
 export default function LandingPage() {
   return (
@@ -27,7 +28,14 @@ export default function LandingPage() {
               channels.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
-              <GithubAuthButton />
+              <GithubAuthButton
+                text="Get Started with"
+                icon={{
+                  Icon: FaGithub,
+                  position: "right",
+                  size: 20,
+                }}
+              />
             </div>
           </div>
         </section>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ThemeToggle } from "../ThemeToggle";
 import { GithubAuthButton } from "../GithubAuthButton";
+import { FaGithub } from "react-icons/fa6";
 
 export default function Navbar() {
   return (
@@ -43,7 +44,14 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <ThemeToggle />
             <div className="hidden md:flex gap-4">
-              <GithubAuthButton />
+              <GithubAuthButton
+                text="Get Started with"
+                icon={{
+                  Icon: FaGithub,
+                  position: "right",
+                  size: 20,
+                }}
+              />
             </div>
           </div>
         </div>
