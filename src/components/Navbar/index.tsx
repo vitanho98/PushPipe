@@ -10,13 +10,13 @@ export default function Navbar() {
           <div className="flex gap-6 md:gap-10">
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src="/logo/pipepush.jpeg"
-                alt="PipePush Logo"
+                src="/logo/pushpipe.jpeg"
+                alt="PushPipe Logo"
                 width={32}
                 height={32}
                 className="h-8 w-8 rounded-full"
               />
-              <span className="inline-block font-bold">PipePush</span>
+              <span className="inline-block font-bold">PushPipe</span>
             </Link>
             <nav className="hidden gap-6 md:flex">
               <Link

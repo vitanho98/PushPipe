@@ -123,7 +123,7 @@ export default function NotificationDemo() {
               <div className="flex flex-col gap-1 flex-1">
                 <div className="flex items-center">
                   <span className="font-semibold text-blue-700 dark:text-blue-400">
-                    PipePush Bot
+                    PushPipe Bot
                   </span>
                   <span className="ml-2 text-xs text-slate-500">
                     Today at 10:30 AM

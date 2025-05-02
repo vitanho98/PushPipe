@@ -15,7 +15,7 @@ export default function LandingPage() {
         <section className="flex flex-col gap-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
           <div className="w-full flex flex-col items-center gap-4 text-center">
             <div className="inline-block rounded-lg bg-emerald-100 px-3 py-1 text-sm text-emerald-800 dark:bg-emerald-800/30 dark:text-emerald-400">
-              Introducing PipePush
+              Introducing PushPipe
             </div>
             <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1]">
               Connect GitHub Actions <br className="hidden sm:inline" />
@@ -79,8 +79,8 @@ export default function LandingPage() {
             <FeatureCard
               icon={
                 <Image
-                  src="/logo/PipePush.jpeg"
-                  alt="PipePush Logo"
+                  src="/logo/PushPipe.jpeg"
+                  alt="PushPipe Logo"
                   width={40}
                   height={40}
                   className="h-10 w-10"
@@ -111,7 +111,7 @@ export default function LandingPage() {
               How It Works
             </h2>
             <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-              See how PipePush keeps your team informed with real-time GitHub
+              See how PushPipe keeps your team informed with real-time GitHub
               notifications
             </p>
           </div>
@@ -155,14 +155,14 @@ export default function LandingPage() {
         <div className="w-full flex flex-col items-center justify-between gap-4 md:flex-row px-4">
           <div className="flex items-center gap-2">
             <Image
-              src="/logo/PipePush.jpeg"
-              alt="PipePush Logo"
+              src="/logo/PushPipe.jpeg"
+              alt="PushPipe Logo"
               width={20}
               height={20}
               className="h-5 w-5"
             />
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} PipePush. All rights reserved.
+              © {new Date().getFullYear()} PushPipe. All rights reserved.
             </p>
           </div>
           <div className="flex gap-4">
