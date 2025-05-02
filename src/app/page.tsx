@@ -1,102 +1,191 @@
+import Link from "next/link";
 import Image from "next/image";
+import { ArrowRight, GitBranch, GitPullRequest, Users } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import HeroAnimation from "@/components/HeroAnimations";
+import FeatureCard from "@/components/FeatureCard";
+import NotificationDemo from "@/components/NotificationDemo";
+import Navbar from "@/components/Navbar";
 
-export default function Home() {
+export default function LandingPage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="w-full flex min-h-screen flex-col">
+      <Navbar />
+      <main className="flex-1">
+        <section className="flex flex-col gap-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
+          <div className="w-full flex flex-col items-center gap-4 text-center">
+            <div className="inline-block rounded-lg bg-emerald-100 px-3 py-1 text-sm text-emerald-800 dark:bg-emerald-800/30 dark:text-emerald-400">
+              Introducing PipePush
+            </div>
+            <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1]">
+              Connect GitHub Actions <br className="hidden sm:inline" />
+              to Discord Seamlessly
+            </h1>
+            <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
+              Keep your dev team in the loop with real-time notifications about
+              branches, pull requests, and more—directly in your Discord
+              channels.
+            </p>
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <Button
+                asChild
+                size="lg"
+                className="bg-blue-500 hover:bg-blue-700"
+              >
+                <Link href="#get-started">
+                  Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link href="#how-it-works">Learn More</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        <section className="w-full py-8 md:py-12 lg:py-24">
+          <HeroAnimation />
+        </section>
+
+        <section
+          id="features"
+          className="w-full flex flex-col gap-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24"
+        >
+          <div className="w-full mx-auto flex max-w-[58rem] flex-col items-center gap-4 text-center">
+            <h2 className="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-5xl">
+              Features
+            </h2>
+            <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+              Everything you need to keep your team informed about GitHub
+              activities
+            </p>
+          </div>
+          <div className="w-full mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
+            <FeatureCard
+              icon={<GitBranch className="h-10 w-10 text-blue-600" />}
+              title="Branch Notifications"
+              description="Get notified when someone creates a new branch, with details about who created it and when."
+            />
+            <FeatureCard
+              icon={<GitPullRequest className="h-10 w-10 text-blue-600" />}
+              title="Pull Request Alerts"
+              description="Receive alerts for new pull requests, including who created them and who's been tagged for review."
+            />
+            <FeatureCard
+              icon={<Users className="h-10 w-10 text-blue-600" />}
+              title="Team Mentions"
+              description="Automatically mention team members in Discord based on GitHub actions and assignments."
+            />
+            <FeatureCard
+              icon={
+                <Image
+                  src="/logo/PipePush.jpeg"
+                  alt="PipePush Logo"
+                  width={40}
+                  height={40}
+                  className="h-10 w-10"
+                />
+              }
+              title="Customizable Notifications"
+              description="Choose which events trigger notifications and how they appear in your Discord channels."
+            />
+            <FeatureCard
+              icon={<GitBranch className="h-10 w-10 text-blue-600" />}
+              title="GitHub Integration"
+              description="Seamless integration with GitHub Actions without complex configuration."
+            />
+            <FeatureCard
+              icon={<ArrowRight className="h-10 w-10 text-blue-600" />}
+              title="One-Click Setup"
+              description="Get up and running in minutes with our simple setup process."
+            />
+          </div>
+        </section>
+
+        <section
+          id="how-it-works"
+          className="w-full w-full py-8 md:py-12 lg:py-24"
+        >
+          <div className="mx-auto flex max-w-[58rem] flex-col items-center gap-4 text-center">
+            <h2 className="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-5xl">
+              How It Works
+            </h2>
+            <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+              See how PipePush keeps your team informed with real-time GitHub
+              notifications
+            </p>
+          </div>
+
+          <div className="mt-16">
+            <NotificationDemo />
+          </div>
+        </section>
+
+        <section
+          id="get-started"
+          className="w-full w-full py-8 md:py-12 lg:py-24"
+        >
+          <div className="mx-auto flex max-w-[58rem] flex-col items-center gap-4 text-center">
+            <h2 className="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-5xl">
+              Ready to Connect?
+            </h2>
+            <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+              Sign up now and start receiving GitHub notifications in your
+              Discord channels
+            </p>
+
+            <div className="mt-6 flex flex-col gap-4 sm:flex-row">
+              <Button
+                asChild
+                size="lg"
+                className="bg-blue-500 hover:bg-blue-700"
+              >
+                <Link href="/signup">
+                  Sign Up Free <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link href="/login">Log In</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer className="border-t bg-slate-50 py-6 dark:bg-transparent md:py-8">
+        <div className="w-full flex flex-col items-center justify-between gap-4 md:flex-row px-4">
+          <div className="flex items-center gap-2">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
+              src="/logo/PipePush.jpeg"
+              alt="PipePush Logo"
               width={20}
               height={20}
+              className="h-5 w-5"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <p className="text-sm text-muted-foreground">
+              © {new Date().getFullYear()} PipePush. All rights reserved.
+            </p>
+          </div>
+          <div className="flex gap-4">
+            <Link
+              href="/terms"
+              className="text-sm text-muted-foreground hover:text-foreground"
+            >
+              Terms
+            </Link>
+            <Link
+              href="/privacy"
+              className="text-sm text-muted-foreground hover:text-foreground"
+            >
+              Privacy
+            </Link>
+            <Link
+              href="/contact"
+              className="text-sm text-muted-foreground hover:text-foreground"
+            >
+              Contact
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
       </footer>
     </div>
   );
