@@ -26,7 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body className={`${nunito.variable} ${poppins.variable} antialiased`}>
+      <body
+        className={`${nunito.variable} ${poppins.variable} antialiased`}
+        suppressHydrationWarning
+      >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>
