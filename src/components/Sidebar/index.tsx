@@ -210,7 +210,7 @@ function Sidebar({
 
   return (
     <aside
-      className={`h-full overflow-x-hidden transition-all duration-300 ${textNowrap} ${borderSide} ${className} ${responsiveStyle}`}
+      className={`h-full overflow-x-hidden transition-all duration-300 ${textNowrap} ${borderSide} border-border bg-sidebar text-sidebar-foreground ${className} ${responsiveStyle}`}
       style={{
         width: sidebarWidth,
         ...(typeof window !== "undefined" &&
@@ -221,14 +221,14 @@ function Sidebar({
       data-collapsed={isCollapsed}
       data-position={position}
     >
-      <div className="flex-grow overflow-y-auto p-4">{children}</div>
+      <div className="h-full flex-grow overflow-y-auto p-4">{children}</div>
 
       {(showInternalTrigger || isMobile) && !isCollapsed && (
         <Button
           onClick={contextValue?.toggle}
           variant="ghost"
           size="icon"
-          className={`absolute right-4 top-4`}
+          className={`absolute right-4 top-4 text-sidebar-foreground`}
         >
           {getCollapseIcon(position, isCollapsed)}
         </Button>
